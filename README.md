@@ -1,14 +1,14 @@
 # Proyecto_final_CAMP
 Código para buscar coordenadas genéticas asociadas a enfermedades de depósito lisosomal.
 
-1. Instalación: dejá escritos todos los paquetes requeridos para ejecutar tu código
+# 1. Instalación: dejá escritos todos los paquetes requeridos para ejecutar tu código
 
 Para el correcto funcionamiento del código que se desglosará y explicará a continuación es necesario:
 * Instalar la biblioteca pandas ejecutando el siguiente comando: pip3 install pandas
 
-2. Corrida: dejá explicitado con ejemplos cómo se debe ejecutar tu código, qué archivos entrada y de salida genera y dónde se pueden encontrar. El código que proporciones deberá ser reproducible, en caso de usar software y/o hardware específico, debes incluirlo en la documentación del código.
+# 2. Corrida: dejá explicitado con ejemplos cómo se debe ejecutar tu código, qué archivos entrada y de salida genera y dónde se pueden encontrar. El código que proporciones deberá ser reproducible, en caso de usar software y/o hardware específico, debes incluirlo en la documentación del código.
 
-3. Finalidad del proyecto
+# 3. Finalidad del proyecto
 
 Este proyecto tiene por objetivo compilar una base de datos donde se encuentren diferentes mutaciones asociadas a enfermedades de depóstiso lisosomal como Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo, entre otras. En la actualidad el diagnóstico de este tipo de enfermedades se efectúa por NGS (secuenciación de siguiente generación) por alineamiento de las secuencias generadas con un genoma de referencia (hg38, hg37),  en donde se efectúa una comparación y mapeamiento de las variantes encontradas en los individuos.
 
@@ -22,6 +22,23 @@ Para el análisis de Resultados y caracterización de la variantes se deben cons
   - Ensembl! Browser, que suministra información detallada sobre genes, transcritos, proteínas, SNVs y SNPs, etc. y herramientas como BLAT/BLAST, VEP.
   - UniProt, que proporciona información sobre la estructura terciaria de las proteínas, sobre los diferentes dominios proteicos, entre otros.
 
+Existen diferentes bases de datos de Mutaciones y Repositorios utilizadas:
+
+* The Human Gene Mutation Database - HGMD R – todas las variantes ya reportadas en la literatura médica. No curada.
+* Genomenom Mastermind R – Todas las variantes reportadas en la literatura, incluyendo en el material complementario.
+* ClinVar – Variantes sometidas por grupos académicos y privados, y consorcios de todo el mundo, ya sea a partir de la literatura o identificadas en la práctica del día a día.
+* Leiden Open Variation Database (LOVD) – Variantes presentadas por los grupos de estudio y literatura, algunas curadas, generalmente realizado por los propios investigadores.
+* Bases de datos de enfermedades específicas.
+
+La clasificación de las variantes están alineadas bajo las ecomendaciones del ACMG, para la clasificación de variantes, la cuál está categorizada de la siguiente manera:
+
+- Benigna
+- Probablemente benigna
+- VUS
+- Probablemente patogénica
+- Patogénica
+
+Es por esto que se construyó una base  que consigne algunas de las principales mutaciones asociadas a enfermedades de depósito lisosomal.
 
 5. La documentación sobre las conclusiones y especificaciones de tu proyecto puede realizarse en un notebook de Jupyter o en el mismo README.md, en el que expliques de forma detallada:
     - Finalidad que persigue tu proyecto o el problema que quieres resolver.
@@ -99,28 +116,5 @@ import pandas as pd
 
 
 
-mapeamiento de las variantes encontradas en los individuos. Para el análisis de resultados y caracterización de las variantes
 
-1. La frecuencia poblacional - de acuerdo con el patrón de herencia, la gravedad del fenotipo,
 
-2. Si previamente ha sido descrito en la literatura médica,
-
-3. El tipo de variante y mecanismo molecular, y por último,
-
-4. El uso de algunas herramientas como:
-
-- IGV Browser (Visualización de la secuenciación y de posibles CNVs y breakpoints), 
-- Ensembl! Browser (Información detallada sobre genes, transcritos, proteínas, SNVs y SNPs, etc. y herramientas como BLAT/BLAST,
-UniProt (Información sobre la estructura terciaria de las proteinas, sobre los diferentes dominios proteicos, entre otros.
-
-La clasificación de la variantes alineados a las recomendaciones del ACMG para la clasificación de variantes se divide en:
-
-Benigna
-
-Probablemente benigna
-
-VUS
-
-Probablemente patogénica
-
-Patogénica
