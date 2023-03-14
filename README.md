@@ -1,6 +1,18 @@
 # Proyecto_final_CAMP
 Código para buscar coordenadas genéticas asociadas a enfermedades de depósito lisosomal
 
+1. Instalación: dejá escritos todos los paquetes requeridos para ejecutar tu código
+
+3. Corrida: dejá explicitado con ejemplos cómo se debe ejecutar tu código, qué archivos entrada y de salida genera y dónde se pueden encontrar. El código que proporciones deberá ser reproducible, en caso de usar software y/o hardware específico, debes incluirlo en la documentación del código.
+4. La documentación sobre las conclusiones y especificaciones de tu proyecto puede realizarse en un notebook de Jupyter o en el mismo README.md, en el que expliques de forma detallada:
+    - Finalidad que persigue tu proyecto o el problema que quieres resolver.
+    - Describir los pasos para solucionar el problema (código y comentarios).
+    - Indicar el software y bases de datos específicos del área utilizados y por qué.
+    - Resume los resultados que obtuviste explicando si tu aproximación fue adecuada o no. En esta sección de la documentación que incluya las conclusiones y observaciones que pudiste hacer gracias a este análisis
+5. El código que proporciones deberá contar con una licencia de tipo Creative Commons Zero de modo que tu código, si bien es abierto, está protegido y cuentas con atribución intelectual.
+6. Usa datos públicos, disponibles en bases de datos abiertas como GenBank, SRA, UniProt, etc. Es indispensable que indiques en el código o en la documentación los números de acceso de los datos que empleaste. Alternativamente, puedes usar datos que estén depositados en repositorios como FigShare, indicando el Digital Object Identifier en tu código o en la documentación.
+
+
 print (f'La coordenada genética (coordenada) está relacionada con la enfermedad (ent
 
 
