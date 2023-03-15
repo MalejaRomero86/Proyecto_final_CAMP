@@ -2,6 +2,7 @@
 Código para buscar coordenadas genéticas asociadas a enfermedades de depósito lisosomal.
 
 # 1. Instalación: dejá escritos todos los paquetes requeridos para ejecutar tu código
+* El software y datos usados.
 
 Para el correcto funcionamiento del código que se desglosará y explicará a continuación es necesario:
 * Instalar la biblioteca pandas ejecutando el siguiente comando: pip3 install pandas
@@ -30,7 +31,7 @@ Existen diferentes bases de datos de Mutaciones y Repositorios utilizadas:
 * Leiden Open Variation Database (LOVD) – Variantes presentadas por los grupos de estudio y literatura, algunas curadas, generalmente realizado por los propios investigadores.
 * Bases de datos de enfermedades específicas.
 
-La clasificación de las variantes están alineadas bajo las ecomendaciones del ACMG, para la clasificación de variantes, la cuál está categorizada de la siguiente manera:
+La clasificación de las variantes y su significancia clínica está alineada bajo las ecomendaciones del ACMG, la cuál está categorizada de la siguiente manera:
 
 - Benigna
 - Probablemente benigna
@@ -40,79 +41,55 @@ La clasificación de las variantes están alineadas bajo las ecomendaciones del 
 
 Es por esto que se construyó una base  que consigne algunas de las principales mutaciones asociadas a enfermedades de depósito lisosomal.
 
-5. La documentación sobre las conclusiones y especificaciones de tu proyecto puede realizarse en un notebook de Jupyter o en el mismo README.md, en el que expliques de forma detallada:
+4. Pasos
+
+# En primera instancia se debe importar la biblioteca pandas
+import pandas as pd 
+
+# cargar archivo CSV con la información:
+# el archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constutida por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
+df = pd.read_csv('enfermedades.csv') 
+ 
+# solicitar al usuario la coordenada genética 
+coordenada = input('Introduzca la coordenada genética (GRCh37): ') 
+ 
+# buscar la coordenada en el archivo 
+resultado = df.loc[df['Coordenada_genetica'] == coordenada] 
+ 
+# imprimir resultados si se encontró alguna entrada 
+if not resultado.empty: 
+    gen = resultado['Gen'].values[0] 
+    significancia = resultado['Significancia_clinica'].values[0] 
+    enfermedad = resultado['Enfermedad_asociada'].values[0] 
+    print(f'La coordenada genética {coordenada} está relacionada con la enfermedad {enfermedad},causada por el gen {gen} con una significancia clínica de {significancia}.') 
+else: 
+    print(f'La coordenada genética {coordenada} no está relacionada con ninguna enfermedad de depósito lisosomal.')
+    
+  # Si la coordenada genética se encuentra en el archivo arrojará a cuál enfermedad está asoaciada la coordenada y su significancia clínica.
+
+depósito lisosomal
+
+
+5. Conclusiones y resultados.
+
+
     - Finalidad que persigue tu proyecto o el problema que quieres resolver.
     - Describir los pasos para solucionar el problema (código y comentarios).
     - Indicar el software y bases de datos específicos del área utilizados y por qué.
     - Resume los resultados que obtuviste explicando si tu aproximación fue adecuada o no. En esta sección de la documentación que incluya las conclusiones y observaciones que pudiste hacer gracias a este análisis
+    - 
 6. El código que proporciones deberá contar con una licencia de tipo Creative Commons Zero de modo que tu código, si bien es abierto, está protegido y cuentas con atribución intelectual.
-7. Usa datos públicos, disponibles en bases de datos abiertas como GenBank, SRA, UniProt, etc. Es indispensable que indiques en el código o en la documentación los números de acceso de los datos que empleaste. Alternativamente, puedes usar datos que estén depositados en repositorios como FigShare, indicando el Digital Object Identifier en tu código o en la documentación.
-
-
-print (f'La coordenada genética (coordenada) está relacionada con la enfermedad (ent
-
-
-
-# el archivo (enfermedades.csv) fue construido por datos obtenidos de NCBI de al momento, entre ellas: Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolysaccharidosis, San
-
-Enfermedad Asociada y Significancía clínica)
-
-df = pd.read_csv('enfermedades.csv', sep=';')
-
-# solicitar al usuario la coordenada genética
-
-coordenada = input('Introduzca la coordenada genética (GRCh37): ')
-
-#buscar la coordenada en el archivo
-
-=resultado= df.loc[df['Coordenada genetica'] == coordenada]
-
-#imprimir resultados si se encontró alguna entrada
-
-if not resultado.empty:
-
-gen = resultado['Gen'].values[0] print(gen)
-
-significancia resultadol Significancia clinica).values[0]
-
-enfermedad = resultado "Enfermedad asociada').values[0]
-
-(significancia).")
-
-else:
-
-print("La coordenada genética (coordenada) no está relacionada con ninguna enfermed
-
-Si la coordenada genética se encuentra en el archivo arrojará a cuál enfermedad está a
-
-depósito lisosomal
-
-Finalidad que persigue tu proyecto o el problema que quieres resolver.
-
-Describir los pasos para solucionar el problema (código y comentarios).
-
-Indicar el software y bases de datos especificos del area utilizados y por qué.
-Resume los resultados que obtuviste explicando si tu aproximación fue adecuada o no. En
-
-que pudiste hacer gracias a este analisis
+7. 
+8. Usa datos públicos, disponibles en bases de datos abiertas como GenBank, SRA, UniProt, etc. Es indispensable que indiques en el código o en la documentación los números de acceso de los datos que empleaste. Alternativamente, puedes usar datos que estén depositados en repositorios como FigShare, indicando el Digital Object Identifier en tu código o en la documentación.
 
 
 
 
-proporciones deberá ser reproducible, en caso de usar software y/o hardware especifico, debes incluirlo en la documentación del código.
 
 
 
-4. Pasos
-
-En primera instancia se debe importar la biblioteca pandas.
-
-import pandas as pd
 
 
-# cargar archivo CSV con la información:
-
-# el archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo)
 
 
 
