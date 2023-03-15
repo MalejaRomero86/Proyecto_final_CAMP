@@ -6,6 +6,7 @@ Código para buscar coordenadas genéticas asociadas a enfermedades de depósito
 
 Para el correcto funcionamiento del código que se desglosará y explicará a continuación es necesario:
 * Instalar la biblioteca pandas ejecutando el siguiente comando: pip3 install pandas
+* La Biblioteca sys que hace parte del core de python, por lo cual ya se debería encontrar instalda, verificar ejecuntado el siguiente comando: import sys
 
 # 2. Corrida: dejá explicitado con ejemplos cómo se debe ejecutar tu código, qué archivos entrada y de salida genera y dónde se pueden encontrar. El código que proporciones deberá ser reproducible, en caso de usar software y/o hardware específico, debes incluirlo en la documentación del código.
 
@@ -48,15 +49,19 @@ import pandas as pd
 
 # cargar archivo CSV con la información:
 # el archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constutida por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
+# En este código, la función pd.read_csv es utilizada para leer la base de datos que se construyó sobre diferentes mutaciones  asociadas a enfermedades de depósito lisosomal en formato CSV y al mismo tiempo almacenarla en un DataFrame de pandas llamado df. 
 df = pd.read_csv('enfermedades.csv') 
  
 # solicitar al usuario la coordenada genética 
+# La función input de la biblioteca sys es utilizada para solicitar al usuario que ingrese la coordenada genética de interés.
 coordenada = input('Introduzca la coordenada genética (GRCh37): ') 
  
 # buscar la coordenada en el archivo 
+# La línea df.loc[df["Coordenada"] == coordenada] busca todas las filas en la base de datos df que contengan la coordenada genética que fue insertada por el usuario y las almacena en una variable llamada mutacion. Si no se encuentra ninguna mutación asociada a una enfermedad de depósito lisosomal, la variable mutacion será un DataFrame vacío.
 resultado = df.loc[df['Coordenada_genetica'] == coordenada] 
  
 # imprimir resultados si se encontró alguna entrada 
+# Por último, el código imprime el resultado utilizando la función print. Si se encuentra una mutación asociada a una enfermedad de depósito lisosomal, el código imprime la fila de la base de datos correspondiente a la mutación. Sipor el contrario, no se encuentra ninguna mutación asociada a una enfermedad de depósito lisosomal, el código imprime un mensaje indicando que no se encontraron mutaciones asociadas con la coordenada ingresada por el usuario.
 if not resultado.empty: 
     gen = resultado['Gen'].values[0] 
     significancia = resultado['Significancia_clinica'].values[0] 
@@ -73,6 +78,10 @@ depósito lisosomal
 5. Conclusiones y resultados.
 
 
+Es importante tener en cuenta que una limitante de esta aproximación es que es ecesario contar con una base de datos que se esté actualizando de manera permanentede las mutaciones asociadas con enfermedades de depóstivo lisisosomal para obtener resultados precisos, ya que se han descrito innumerables.
+
+
+
     - Finalidad que persigue tu proyecto o el problema que quieres resolver.
     - Describir los pasos para solucionar el problema (código y comentarios).
     - Indicar el software y bases de datos específicos del área utilizados y por qué.
@@ -81,6 +90,11 @@ depósito lisosomal
 6. El código que proporciones deberá contar con una licencia de tipo Creative Commons Zero de modo que tu código, si bien es abierto, está protegido y cuentas con atribución intelectual.
 7. 
 8. Usa datos públicos, disponibles en bases de datos abiertas como GenBank, SRA, UniProt, etc. Es indispensable que indiques en el código o en la documentación los números de acceso de los datos que empleaste. Alternativamente, puedes usar datos que estén depositados en repositorios como FigShare, indicando el Digital Object Identifier en tu código o en la documentación.
+
+
+
+
+
 
 
 
