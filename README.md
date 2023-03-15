@@ -50,7 +50,7 @@ import pandas as pd
 # cargar archivo CSV con la información:
 # el archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constutida por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
 # En este código, la función pd.read_csv es utilizada para leer la base de datos que se construyó sobre diferentes mutaciones  asociadas a enfermedades de depósito lisosomal en formato CSV y al mismo tiempo almacenarla en un DataFrame de pandas llamado df. 
-df = pd.read_csv('enfermedades.csv') 
+df = pd.read_csv('enfermedades.csv', sep=';') 
  
 # solicitar al usuario la coordenada genética 
 # La función input de la biblioteca sys es utilizada para solicitar al usuario que ingrese la coordenada genética de interés.
@@ -64,6 +64,7 @@ resultado = df.loc[df['Coordenada_genetica'] == coordenada]
 # Por último, el código imprime el resultado utilizando la función print. Si se encuentra una mutación asociada a una enfermedad de depósito lisosomal, el código imprime la fila de la base de datos correspondiente a la mutación. Sipor el contrario, no se encuentra ninguna mutación asociada a una enfermedad de depósito lisosomal, el código imprime un mensaje indicando que no se encontraron mutaciones asociadas con la coordenada ingresada por el usuario.
 if not resultado.empty: 
     gen = resultado['Gen'].values[0] 
+    print(gen)
     significancia = resultado['Significancia_clinica'].values[0] 
     enfermedad = resultado['Enfermedad_asociada'].values[0] 
     print(f'La coordenada genética {coordenada} está relacionada con la enfermedad {enfermedad},causada por el gen {gen} con una significancia clínica de {significancia}.') 
