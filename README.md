@@ -1,16 +1,15 @@
 # Proyecto_final_CAMP
 Código para buscar coordenadas genéticas asociadas a enfermedades de depósito lisosomal.
 
-# 1. Instalación: dejá escritos todos los paquetes requeridos para ejecutar tu código
-* El software y datos usados.
+1. Instalación: 
+* Software y datos usados.
 
 Para el correcto funcionamiento del código que se desglosará y explicará a continuación es necesario:
 * Instalar la biblioteca pandas ejecutando el siguiente comando: pip3 install pandas
 * La Biblioteca sys que hace parte del core de python, por lo cual ya se debería encontrar instalda, verificar ejecuntado el siguiente comando: import sys
+* El DataFrame fue construido con información consolidada del NCBI sobre diferentes mutaciones asociadas a enfermedades de depóstiso lisosomal.
 
-# 2. Corrida: dejá explicitado con ejemplos cómo se debe ejecutar tu código, qué archivos entrada y de salida genera y dónde se pueden encontrar. El código que proporciones deberá ser reproducible, en caso de usar software y/o hardware específico, debes incluirlo en la documentación del código.
-
-# 3. Finalidad del proyecto
+2. Finalidad del proyecto
 
 Este proyecto tiene por objetivo compilar una base de datos donde se encuentren diferentes mutaciones asociadas a enfermedades de depóstiso lisosomal como Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo, entre otras. En la actualidad el diagnóstico de este tipo de enfermedades se efectúa por NGS (secuenciación de siguiente generación) por alineamiento de las secuencias generadas con un genoma de referencia (hg38, hg37),  en donde se efectúa una comparación y mapeamiento de las variantes encontradas en los individuos.
 
