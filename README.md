@@ -46,24 +46,29 @@ Es por esto que se construyó una base  que consigne algunas de las principales 
 
 3. Pasos
 
-# En primera instancia se debe importar la biblioteca pandas
+*En primera instancia se debe importar la biblioteca pandas
+
 import pandas as pd 
 
-# cargar archivo CSV con la información:
-# el archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constitui por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
-# En este código, la función pd.read_csv es utilizada para leer la base de datos que se construyó sobre diferentes mutaciones  asociadas a enfermedades de depósito lisosomal en formato CSV y al mismo tiempo almacenarla en un DataFrame de pandas llamado df. 
+*Cargar archivo CSV con la información:
+El archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constitui por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
+En este código, la función pd.read_csv es utilizada para leer la base de datos que se construyó sobre diferentes mutaciones  asociadas a enfermedades de depósito lisosomal en formato CSV y al mismo tiempo almacenarla en un DataFrame de pandas llamado df. 
+
 df = pd.read_csv('enfermedades.csv', sep=';') 
  
-# solicitar al usuario la coordenada genética 
-# La función input de la biblioteca sys es utilizada para solicitar al usuario que ingrese la coordenada genética de interés.
+*Solicitar al usuario la coordenada genética 
+La función input de la biblioteca sys es utilizada para solicitar al usuario que ingrese la coordenada genética de interés.
+
 coordenada = input('Introduzca la coordenada genética (GRCh37): ') 
  
-# buscar la coordenada en el archivo 
-# La línea df.loc[df["Coordenada"] == coordenada] busca todas las filas en la base de datos df que contengan la coordenada genética que fue insertada por el usuario y las almacena en una variable llamada mutacion. Si no se encuentra ninguna mutación asociada a una enfermedad de depósito lisosomal, la variable mutacion será un DataFrame vacío.
+*Buscar la coordenada en el archivo 
+La línea df.loc[df["Coordenada"] == coordenada] busca todas las filas en la base de datos df que contengan la coordenada genética que fue insertada por el usuario y las almacena en una variable llamada mutacion. Si no se encuentra ninguna mutación asociada a una enfermedad de depósito lisosomal, la variable mutacion será un DataFrame vacío.
+
 resultado = df.loc[df['Coordenada_genetica'] == coordenada] 
  
-# imprimir resultados si se encontró alguna entrada 
-# Por último, el código imprime el resultado utilizando la función print. Si se encuentra una mutación asociada a una enfermedad de depósito lisosomal, el código imprime la fila de la base de datos correspondiente a la mutación. Sipor el contrario, no se encuentra ninguna mutación asociada a una enfermedad de depósito lisosomal, el código imprime un mensaje indicando que no se encontraron mutaciones asociadas con la coordenada ingresada por el usuario.
+*Imprimir resultados si se encontró alguna entrada 
+Por último, el código imprime el resultado utilizando la función print. Si se encuentra una mutación asociada a una enfermedad de depósito lisosomal, el código imprime la fila de la base de datos correspondiente a la mutación. Sipor el contrario, no se encuentra ninguna mutación asociada a una enfermedad de depósito lisosomal, el código imprime un mensaje indicando que no se encontraron mutaciones asociadas con la coordenada ingresada por el usuario.
+
 if not resultado.empty: 
     gen = resultado['Gen'].values[0] 
     print(gen)
@@ -73,7 +78,7 @@ if not resultado.empty:
 else: 
     print(f'La coordenada genética {coordenada} no está relacionada con ninguna enfermedad de depósito lisosomal.')
     
-  # Si la coordenada genética se encuentra en el archivo arrojará a cuál enfermedad está asoaciada la coordenada y su significancia clínica según los lineamientos del ACMG.
+ *Si la coordenada genética se encuentra en el archivo arrojará a cuál enfermedad está asoaciada la coordenada y su significancia clínica según los lineamientos del ACMG.
 
 4. Conclusiones y resultados.
 
