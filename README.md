@@ -1,6 +1,6 @@
 # Proyecto_final_CAMP
 
-Hola mi nombre es Alejnadra Romero, soy de Colombia, estudié Bacteriología y Laboratorio Clínico y tengo una Maestría en Salud Pública, me incliné por el tema de enfermedades de depósito lisosomal porque actualmente trabajo en un laboratorio de genética y estoy en la parte de programas de apoyo diagnóstico de enfermedades raras, entre ellas las anteriormente mencionadas, así que es un campo que me gusta y  me parece interesante realizar un análisis exploratorio.
+Hola, mi nombre es Alejandra Romero, soy de Colombia, estudié Bacteriología y Laboratorio Clínico y tengo una Maestría en Salud Pública, me incliné por el tema de enfermedades de depósito lisosomal porque actualmente trabajo en un laboratorio de genética y estoy en la parte de programas de apoyo diagnóstico de enfermedades raras, entre ellas las anteriormente mencionadas, así que es un campo que me gusta y  me parece interesante realizar un análisis exploratorio.
 
 Código para buscar coordenadas genéticas asociadas a enfermedades de depósito lisosomal.
 
