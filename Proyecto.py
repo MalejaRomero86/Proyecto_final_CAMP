@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 # cargar archivo CSV con la información
