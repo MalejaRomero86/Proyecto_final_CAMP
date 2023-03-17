@@ -1,6 +1,6 @@
 # Proyecto_final_CAMP
 
-Hola, mi nombre es Alejandra Romero, soy de Colombia, estudié Bacteriología y Laboratorio Clínico y tengo una Maestría en Salud Pública, me incliné por el tema de enfermedades de depósito lisosomal porque actualmente trabajo en un laboratorio de genética y estoy en la parte de programas de apoyo diagnóstico de enfermedades raras, entre ellas las anteriormente mencionadas, así que es un campo que me gusta y  me parece interesante realizar un análisis exploratorio.
+Hola, mi nombre es Alejandra Romero, soy de Colombia, estudié Bacteriología y Laboratorio Clínico y tengo una Maestría en Salud Pública, me incliné por el tema de enfermedades de depósito lisosomal porque actualmente trabajo en un laboratorio de genética y doy soporte en la parte de programas de apoyo diagnóstico de enfermedades raras, entre ellas las anteriormente mencionadas, así que es un campo que me gusta y me parece interesante realizar un análisis exploratorio.
 
 Código para buscar coordenadas genéticas asociadas a enfermedades de depósito lisosomal.
 
@@ -10,11 +10,11 @@ Código para buscar coordenadas genéticas asociadas a enfermedades de depósito
 Para el correcto funcionamiento del código que se desglosará y explicará a continuación es necesario:
 * Instalar la biblioteca pandas ejecutando el siguiente comando: pip3 install pandas
 * La Biblioteca sys que hace parte del core de python, por lo cual ya se debería encontrar instalda, verificar ejecuntado el siguiente comando: import sys
-* El DataFrame fue construido con información consolidada del NCBI sobre diferentes mutaciones asociadas a enfermedades de depóstiso lisosomal.
+* La base de datos fue construida con información consolidada del NCBI sobre diferentes mutaciones asociadas a enfermedades de depóstiso lisosomal.
 
 2. Finalidad del proyecto
 
-Este proyecto tiene por objetivo compilar una base de datos donde se encuentren diferentes mutaciones asociadas a enfermedades de depóstiso lisosomal como Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo, entre otras. En la actualidad el diagnóstico de este tipo de enfermedades se efectúa por NGS (secuenciación de siguiente generación) por alineamiento de las secuencias generadas con un genoma de referencia (hg38, hg37),  en donde se efectúa una comparación y mapeamiento de las variantes encontradas en los individuos.
+Este proyecto tiene por objetivo compilar una base de datos donde se encuentren diferentes mutaciones asociadas a enfermedades de depóstiso lisosomal como Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo, entre otras. En la actualidad, uno de los diagnósticos, si no el más imporante de este tipo de enfermedades es efectuado por NGS (secuenciación de siguiente generación) por alineamiento de las secuencias generadas con un genoma de referencia (hg38, hg37),  en donde se realiza una comparación y mapeamiento de las variantes encontradas en los individuos.
 
 Para el análisis de Resultados y caracterización de la variantes se deben considerar varios aspectos:
  1. Frecuencia Poblacional - de acuerdo con el patrón de herencia y la gravedad del fenotipo,
@@ -51,8 +51,8 @@ Es por esto que se construyó una base  que consigne algunas de las principales 
 import pandas as pd 
 
 *Cargar archivo CSV con la información:
-El archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constitui por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
-En este código, la función pd.read_csv es utilizada para leer la base de datos que se construyó sobre diferentes mutaciones  asociadas a enfermedades de depósito lisosomal en formato CSV y al mismo tiempo almacenarla en un DataFrame de pandas llamado df. 
+El archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constituida por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
+En este código, la función pd.read_csv es utilizada para leer la base de datos que se construyó sobre diferentes mutaciones asociadas a enfermedades de depósito lisosomal en formato CSV y al mismo tiempo almacenarla en un DataFrame de pandas llamado df. 
 
 df = pd.read_csv('enfermedades.csv', sep=';') 
  
@@ -82,7 +82,7 @@ else:
 
 4. Conclusiones y resultados.
 
-Al ingresar variantes conocidas y descritas el la literatura médica e ingresadas en el DataFrame se puede evidenciar el tipo de enfermedad de depósito lisosomal al cual se encuentra asociada, así como la significancia clínica que esta representa, dado los lineamientos consignados en el ACMG y que pueden direccionar a un efectivo tratamiento y calidad de vida del paciente. 
+Al ingresar variantes conocidas y descritas el la literatura médica e ingresadas en la base de datos se puede evidenciar el tipo de enfermedad de depósito lisosomal al cual se encuentra asociada, así como la significancia clínica que esta representa, dado los lineamientos consignados en el ACMG y que pueden direccionar a un efectivo tratamiento y calidad de vida del paciente. 
 
 Si bien el código funciona ingresando algunas de las variantes conocidas y previamente descritas en la literatura, es importante tener en cuenta que una limitante de esta aproximación es que es necesario contar con una base de datos que se esté actualizando de manera permanentede las mutaciones asociadas con enfermedades de depóstivo lisisosomal para obtener resultados precisos, ya que se han descrito innumerables.
 
