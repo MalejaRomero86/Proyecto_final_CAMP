@@ -39,7 +39,7 @@ La clasificación de las variantes y su significancia clínica está alineada ba
 - Probablemente patogénica
 - Patogénica
 
-Es por esto que se construyó una base  que consigne algunas de las principales mutaciones asociadas a enfermedades de depósito lisosomal.
+Es por esto que se construyó una base  que consigne algunas de las principales mutaciones asociadas a enfermedades de depósito lisosomal, considerando que 
 
 4. Pasos
 
