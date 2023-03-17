@@ -1,4 +1,7 @@
 # Proyecto_final_CAMP
+
+Hola mi nombre es Alejnadra Romero, soy de Colombia, estudié Bacteriología y Laboratorio Clínico y tengo una Maestría en Salud Pública, me incliné por el tema de enfermedades de depósito lisosomal porque actualmente trabajo en un laboratorio de genética y estoy en la parte de programas de apoyo diagnóstico de enfermedades raras, entre ellas las anteriormente mencionadas.
+
 Código para buscar coordenadas genéticas asociadas a enfermedades de depósito lisosomal.
 
 1. Instalación: 
@@ -31,7 +34,7 @@ Existen diferentes bases de datos de Mutaciones y Repositorios utilizadas:
 * Leiden Open Variation Database (LOVD) – Variantes presentadas por los grupos de estudio y literatura, algunas curadas, generalmente realizado por los propios investigadores.
 * Bases de datos de enfermedades específicas.
 
-La clasificación de las variantes y su significancia clínica está alineada bajo las ecomendaciones del ACMG, la cuál está categorizada de la siguiente manera:
+La clasificación de las variantes y su significancia clínica está alineada bajo las ecomendaciones del ACMG (American College of Medical Genetics and Genomics), la cuál está categorizada de la siguiente manera:
 
 - Benigna
 - Probablemente benigna
@@ -39,15 +42,15 @@ La clasificación de las variantes y su significancia clínica está alineada ba
 - Probablemente patogénica
 - Patogénica
 
-Es por esto que se construyó una base  que consigne algunas de las principales mutaciones asociadas a enfermedades de depósito lisosomal, considerando que 
+Es por esto que se construyó una base  que consigne algunas de las principales mutaciones asociadas a enfermedades de depósito lisosomal, considerando que se han identificado más de 50 enfermedades y es necesario tener a disposición herramientas prácticas para efectuar diagnósticos correctos y tratamientos oportunos.
 
-4. Pasos
+3. Pasos
 
 # En primera instancia se debe importar la biblioteca pandas
 import pandas as pd 
 
 # cargar archivo CSV con la información:
-# el archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constutida por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
+# el archivo ('enfermedades.csv) fue construido por datos obtenidos de NCBI de algunas de las principales enfermedades de depósito lisosomal documentadas hasta el momento, entre ellas Fabry, Pompe, Gaucher, Tay-Sachs, Mucopolisacaridosis, Sindrome de Sanfilippo). La tabla está constitui por cuatro columnas: Coordenada genética, Gen, Enfermedad Asociada y Significancía clínica)
 # En este código, la función pd.read_csv es utilizada para leer la base de datos que se construyó sobre diferentes mutaciones  asociadas a enfermedades de depósito lisosomal en formato CSV y al mismo tiempo almacenarla en un DataFrame de pandas llamado df. 
 df = pd.read_csv('enfermedades.csv', sep=';') 
  
@@ -66,30 +69,19 @@ if not resultado.empty:
     print(gen)
     significancia = resultado['Significancia_clinica'].values[0] 
     enfermedad = resultado['Enfermedad_asociada'].values[0] 
-    print(f'La coordenada genética {coordenada} está relacionada con la enfermedad {enfermedad},causada por el gen {gen} con una significancia clínica de {significancia}.') 
+    print(f'La coordenada genética {coordenada} está relacionada con la enfermedad {enfermedad}, causada por alteraciones en el gen {gen} y su significancia clínica es {significancia}.') 
 else: 
     print(f'La coordenada genética {coordenada} no está relacionada con ninguna enfermedad de depósito lisosomal.')
     
-  # Si la coordenada genética se encuentra en el archivo arrojará a cuál enfermedad está asoaciada la coordenada y su significancia clínica.
+  # Si la coordenada genética se encuentra en el archivo arrojará a cuál enfermedad está asoaciada la coordenada y su significancia clínica según los lineamientos del ACMG.
 
-depósito lisosomal
-
-
-5. Conclusiones y resultados.
+4. Conclusiones y resultados.
 
 
 Es importante tener en cuenta que una limitante de esta aproximación es que es ecesario contar con una base de datos que se esté actualizando de manera permanentede las mutaciones asociadas con enfermedades de depóstivo lisisosomal para obtener resultados precisos, ya que se han descrito innumerables.
 
 
 
-    - Finalidad que persigue tu proyecto o el problema que quieres resolver.
-    - Describir los pasos para solucionar el problema (código y comentarios).
-    - Indicar el software y bases de datos específicos del área utilizados y por qué.
-    - Resume los resultados que obtuviste explicando si tu aproximación fue adecuada o no. En esta sección de la documentación que incluya las conclusiones y observaciones que pudiste hacer gracias a este análisis
-    - 
-6. El código que proporciones deberá contar con una licencia de tipo Creative Commons Zero de modo que tu código, si bien es abierto, está protegido y cuentas con atribución intelectual.
-7. 
-8. Usa datos públicos, disponibles en bases de datos abiertas como GenBank, SRA, UniProt, etc. Es indispensable que indiques en el código o en la documentación los números de acceso de los datos que empleaste. Alternativamente, puedes usar datos que estén depositados en repositorios como FigShare, indicando el Digital Object Identifier en tu código o en la documentación.
 
 
 
