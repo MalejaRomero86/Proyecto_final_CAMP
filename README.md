@@ -82,8 +82,9 @@ else:
 
 4. Conclusiones y resultados.
 
+Al ingresar variantes conocidas y descritas el la literatura médica e ingresadas en el DataFrame se puede evidenciar el tipo de enfermedad de depósito lisosomal al cual se encuentra asociada, así como la significancia clínica que esta representa, dado los lineamientos consignados en el ACMG y que pueden direccionar a un efectivo tratamiento y calidad de vida del paciente. 
 
-Es importante tener en cuenta que una limitante de esta aproximación es que es ecesario contar con una base de datos que se esté actualizando de manera permanentede las mutaciones asociadas con enfermedades de depóstivo lisisosomal para obtener resultados precisos, ya que se han descrito innumerables.
+Si bien el código funciona ingresando algunas de las variantes conocidas y previamente descritas en la literatura, es importante tener en cuenta que una limitante de esta aproximación es que es necesario contar con una base de datos que se esté actualizando de manera permanentede las mutaciones asociadas con enfermedades de depóstivo lisisosomal para obtener resultados precisos, ya que se han descrito innumerables.
 
 
 
